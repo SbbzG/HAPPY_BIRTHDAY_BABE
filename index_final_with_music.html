@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe6f0, #ffe);
+      background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .paper {
+      background: #fffaf0;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      font-family: 'Georgia', cursive;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      bottom: -15px;
+      left: -15px;
+      background-image: url('https://i.imgur.com/OuFO5wl.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 30px;
+      z-index: -1;
+      opacity: 0.2;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-800px) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: floatHearts 10s linear infinite;
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+  <div class="container">
+    <div class="paper">
+      <p>My Dear, my darling, my babe, my favourite person in the whole world.</p>
+      <p>HAPPY BIRTHDAY!! Today isn’t just the day you were born ,it’s the day when God prepared the biggest gift for me. I don’t know how I got so lucky to get unexpectedly someone like you, but every day I wake up and text to you, I remember just how real  is the love that i feel so strongly for you.</p>
+      <p>You shake my heart with a force I never saw coming, but you also give me of your love to keep me steady.<br>
+      You confuse my soul in the best way, because loving you feels like chaos and peace at the same time as i said to you before. I dont know whats happening to me, you make me feel strong like a bull, but weak like a kid, your love is something that i just cant explain.<br>
+      And honestly? I love that mix. I love you.</p>
+      <p>There’s something in you that quiets my fears. Something in your love that makes everything feel lighter an easier. You walked into my life and suddenly I forgot what sadness feels like.</p>
+      <p>I know this is your birthday, but it also feels like a celebration of everything you are to me: my home, my calm, my partner for the future (i expect), my laughs and blushes in late-night talks, even in quiet calls where nothing is said, but everything is felt, you are my biggest dream.</p>
+      <p>Thank you for loving me even when I don’t have the words to describe it. Thanks for staying, for showing up, for being a million reasons and none at the same time. I love you more than anyone could understand.<br>
+      Please let’s keep building this Wonderful, beautiful life together. You and me...always.<br>
+      Happy birthday, my heart. I love you more than I can ever finish saying.</p>
+      <div class="signature">Your boy</div>
+    </div>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = Math.random() * window.innerHeight + 'px';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.querySelector('.hearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(createHeart, 200); // más corazones por segundo
+  </script>
+
+<audio autoplay loop>
+  <source src="https://docs.google.com/uc?export=download&id=1ymHhY5cgi8Mktue-crYolJAB7mguU4Qb" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+</body>
+
+</html>
